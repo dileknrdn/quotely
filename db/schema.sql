@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS quotely_db;
+CREATE DATABASE quotely_db;
