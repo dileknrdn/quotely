@@ -1,20 +1,28 @@
 // seed.js file to execute seeding of databases
+const sequelize = require('../config/connection');
+const { User, Quote } = require('../models');
 
+const userData = require('./userData.json');
+const quoteData = require('./quoteData.json');
 
+const seedDatabase = async () => {
+    await sequelize.sync({ force: true });
+    
+    const users = await User.bulkCreate(userData, {
+        individualHooks: true,
+        returning: true,
+    });
+    
+    for (const quote of quoteData) {
+        await Quote.create({
+        ...quote,
+        });
+    }
+    
+    process.exit(0);
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+seedDatabase();
 
 
 
