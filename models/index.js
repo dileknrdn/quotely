@@ -1,33 +1,15 @@
-//this file connects users to quotes and any other related connections
+const User = require('./User');
+const Quote = require('./Quote');
+
+User.hasMany(Quote, {
+    foreignKey: 'userId',
+    onDelete: 'CASCADE'
+  });
+  
+  Quote.belongsTo(User, {
+    foreignKey: 'userId',
+  });
 
 
+module.exports = { User, Quote };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// mini project code below
-
-// const User = require('./User');
-// const Project = require('./Project');
-
-// User.hasMany(Project, {
-//   foreignKey: 'user_id',
-//   onDelete: 'CASCADE'
-// });
-
-// Project.belongsTo(User, {
-//   foreignKey: 'user_id'
-// });
-
-// module.exports = { User, Project };

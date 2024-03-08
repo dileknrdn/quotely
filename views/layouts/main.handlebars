@@ -6,7 +6,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fund My Project!</title>
+  <title>Quotely!</title>
   <link rel="stylesheet" href="/css/jass.css">
   <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -15,8 +15,7 @@
   <div class="flex-column justify-space-around">
     <header class="display-flex justify-space-between align-center p-2">
       <h1>
-        <span role="img" aria-label="money">💸</span>
-        <a href="/">Fund My Project!</a>
+        <a href="/">Quotely!</a>
       </h1>
       <nav>
         <!-- Conditionally render login or logout links -->
@@ -31,6 +30,13 @@
     <main class="container container-fluid mt-5">
       <!-- Render the sub layout -->
       {{{ body }}}
+      <aside>
+        {{#if logged_in}}
+        <h3><!--Some how inject the users name and a welcome message or something--></h3>
+        {{else}}
+        <h3>Sign up to save your favorite quotes!</h3><!--or something like that -->
+        {{/if}}
+      </aside>
     </main>
     <footer>
       
