@@ -1,5 +1,3 @@
-//mini project user.js model below
-
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
