@@ -12,19 +12,21 @@
 </head>
 
 <body>
-  <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
+  <div>
+    <header>
       <h1>
         <a href="/">Quotely!</a>
       </h1>
       <nav>
-        <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
-        {{else}}
-        <a href="/login">login</a>
-        {{/if}}
+        <ul>
+            <li><a href="/">Home</a></li>
+            {{#if logged_in}}
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a id="logout" href="/">Logout</a></li>
+            {{else}}
+                <li><a href="/login">Sign In</a></li>
+            {{/if}}
+        </ul>
       </nav>
     </header>
     <main class="container container-fluid mt-5">
