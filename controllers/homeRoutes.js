@@ -20,3 +20,5 @@ router.get('/', async (req, res) => {
         res.status(500).send('Error loading quotes');
     } 
 });
+
+module.exports = router;

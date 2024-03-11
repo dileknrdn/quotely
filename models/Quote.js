@@ -6,35 +6,36 @@ class Quote extends Model {}
 
 Quote.init(
     {
-        id: {
+      id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
         autoIncrement: true
-        },
-        quote: {
+      },
+      quote: {
         type: DataTypes.STRING,
         allowNull: false
-        },
-        author: {
+      },
+      author: {
         type: DataTypes.STRING,
         allowNull: false
-        },
-        user_id: {
+      },
+      user_id: {
         type: DataTypes.INTEGER,
-        allowNull: true,
         references: {
-            model: 'user',
-            key: 'id'
+          model: 'user',
+          key: 'id'
         }
-        },
-        sequelize,
-        timestamps: false,
-        freezeTableName: true,
-        underscored: true,
-        modelName: 'quote',
+      },
+    },
+    {
+      sequelize, 
+      timestamps: false,
+      freezeTableName: true,
+      underscored: true,
+      modelName: 'quote',
     }
-);
+  );
 
 
 module.exports = Quote;
