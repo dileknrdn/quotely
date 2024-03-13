@@ -1,5 +1,47 @@
-/* style.css code fomr mini project */
 
+.caveat-medium {
+  font-family: "Caveat", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: medium;
+  font-size: 28px;
+  color: antiquewhite;
+} 
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #b5a1a1;
+}
+
+
+
+
+
+
+/* style.css code fomr mini project
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #b5a1a1;
+  }
+  
+  .container {
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  header {
+    background-color: #bca3be;
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+  }
+  
+  header h1 {
+    margin: 0;
+  }
+  
 header, .project:not(:last-child) {
     border-bottom: 1px solid #ccc;
   }
@@ -9,18 +51,14 @@ header, .project:not(:last-child) {
     border: none;
     padding: 0;
     cursor: pointer;
-    color: #1b89bc;
+    color: #9b9d9e;
     text-decoration: none;
     font-size: 100%;
   }
   
   .no-button:hover {
-    color: #065b83;
+    color: #2b2e2f;
     text-decoration: underline;
   }
   
-  .dollar-amount {
-    color: #056605;
-    font-weight: bold;
-    margin-left: -5px;
-  }
+ */
