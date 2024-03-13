@@ -3,20 +3,69 @@
   font-family: "Caveat", cursive;
   font-optical-sizing: auto;
   font-weight: 400;
-  font-style: medium;
-  font-size: 28px;
-  color: antiquewhite;
+  font-size: 30px;
+  color: rgb(233, 221, 206);
+  font-style: normal;
 } 
 
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #b5a1a1;
+.special-elite-regular {
+  font-family: "Special Elite", system-ui;
+  font-weight: 400;
+  font-style: normal;
 }
 
+header {
+  background-color: rgb(233, 221, 206);
+  color: #b5a1a1;
+  padding: 1em 0;
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 10px;
+  margin: 20px;
+}
 
+body {
+  margin: 20px;
+  padding: 25px;
+  background-color: #c1b6b6;
+}
 
+h1 {
+  font-family: "Special Elite", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: medium;
+  font-size: 36px;
+  color: white;
+  text-align: center;
+  
+}
 
+h3 {
+  font-family: "Special Elite", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: medium;
+  font-size: 24px;
+  color: black; 
+  text-align: center;
+  background-color: rgb(233, 221, 206);
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+footer {
+  background-color: rgb(233, 221, 206);
+  color: white;
+  padding: 10px;
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 10px;
+  margin: 20px;
+  font-family: "Caveat", cursive;
+  font-size: 30px;
+}
 
 
 /* style.css code fomr mini project
