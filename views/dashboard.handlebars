@@ -1,2 +1,14 @@
 <!-- This is for the individuals board -->
 <h1>{{user.name}}'s Dashboard</h1>
+
+{{#if user.quotes}}
+  <h2>Saved Quotes</h2>
+  <ul>
+    <!-- Iterate over each quote and display it -->
+    {{#each user.quotes}}
+      <li class="caveat-medium">{{this.quote}} - <strong>{{this.author}}</strong></li>
+    {{/each}}
+  </ul>
+{{else}}
+  <p>No quotes saved yet.</p>
+{{/if}}

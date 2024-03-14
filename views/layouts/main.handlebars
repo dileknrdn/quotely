@@ -46,7 +46,12 @@
       </aside>
     </main>
     <footer>
-      <p> Quote of the day: "Life is a balance between holding on and letting go." - Rumi </p>
+      {{#if quoteOfTheDay}}
+        <div class="quote-of-the-day">
+          <h2>Quote of the Day</h2>
+          <p>"{{quoteOfTheDay.quote}}" - {{quoteOfTheDay.author}}</p>
+        </div>
+      {{/if}}
     </footer>
   </div> 
 

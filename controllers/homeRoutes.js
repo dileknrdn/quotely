@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User, Quote } = require('../models');
 const withAuth = require('../utils/auth');
+const getQuoteOfTheDay = require('../services/quoteOfTheDay');
 
 
 
@@ -8,15 +9,21 @@ router.get('/', async (req, res) => {
     try {
         // Fetch all quotes from the database
         const quoteData = await Quote.findAll({
-            attributes: ['quote', 'author'], 
+            attributes: ['quote', 'author'],
+            //the where makes sure to not duplicate quotes from the database that are already assigned to a user
+            where: {
+              user_id: null
+            } 
         });
           
         // Serialize data so the template can read it
         const quotes = quoteData.map((quote) => quote.get({ plain: true }));
+        const quoteOfTheDay = await getQuoteOfTheDay();
           
         // Renders the homepage with the quotes data
         res.render('homepage',{
             quotes,
+            quoteOfTheDay,
             logged_in: req.session.logged_in,
         
         }); 
@@ -47,7 +54,10 @@ router.get('/login', (req, res) => {
       });
   
       const user = userData.get({ plain: true });
-      console.log(user)
+      console.log("user: ", user)
+      console.log("session id: ", req.session.user_id)
+      console.log("user.quotes", user.quotes)
+      
   
       res.render("dashboard", {
         user: user,
