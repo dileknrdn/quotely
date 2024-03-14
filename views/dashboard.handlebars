@@ -1,2 +1,26 @@
 <!-- This is for the individuals board -->
 <h1>{{user.name}}'s Dashboard</h1>
+
+{{#if user.quotes}}
+  <h2>Saved Quotes</h2>
+  <ul>
+    <!-- Iterate over each quote and display it -->
+    {{#each user.quotes}}
+      <li class="caveat-medium">{{this.quote}} - <strong>{{this.author}}</strong></li>
+    {{/each}}
+  </ul>
+{{else}}
+  <p>No quotes saved yet.</p>
+{{/if}}
+
+<!-- The above code needs formatting, below is what you had dilek-->
+{{#each quotes}}
+    <div class="card">
+        <div class="card-body">
+            <h5>class="card-title{{this.quote}}</h5> 
+            <p class="card-text">{{this.author}}</p>
+            <button class="btn btn-primary">Edit</button>
+            <button class="btn btn-danger">Delete</button>
+        </div>
+    </div>
+{{/each}}
