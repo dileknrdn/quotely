@@ -2,12 +2,12 @@ const User = require('./User');
 const Quote = require('./Quote');
 
 User.hasMany(Quote, {
-    foreignKey: 'userId',
+    foreignKey: 'user_id',
     onDelete: 'CASCADE'
   });
   
   Quote.belongsTo(User, {
-    foreignKey: 'userId',
+    foreignKey: 'user_id',
   });
 
 
