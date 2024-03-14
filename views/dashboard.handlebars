@@ -1,2 +1,12 @@
 <!-- This is for the individuals board -->
 <h1>{{user.name}}'s Dashboard</h1>
+{{#each quotes}}
+    <div class="card">
+        <div class="card-body">
+            <h5>class="card-title{{this.quote}}</h5> 
+            <p class="card-text">{{this.author}}</p>
+            <button class="btn btn-primary">Edit</button>
+            <button class="btn btn-danger">Delete</button>
+        </div>
+    </div>
+{{/each}}

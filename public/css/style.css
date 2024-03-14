@@ -3,15 +3,16 @@
   font-optical-sizing: auto;
   font-weight: 400;
   font-size: 30px;
-  color: rgb(233, 221, 206);
+  color: white;
   font-style: normal;
-} 
+}
 
 .special-elite-regular {
   font-family: "Special Elite", system-ui;
   font-weight: 400;
   font-style: normal;
 }
+
 
 header {
   background-color: rgb(233, 221, 206);
@@ -37,7 +38,66 @@ h1 {
   font-size: 36px;
   color: white;
   text-align: center;
-  
+
+}
+
+h2 {
+  font-family: "Special Elite", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: medium;
+  font-size: 30px;
+  color: black;
+  text-align: center;
+  background-color: rgb(233, 221, 206);
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.btn-primary {
+  background-color: rgb(233, 221, 206);
+  color: black;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 10px;
+  margin: 20px;
+  font-family: "Special Elite", cursive;
+  font-size: 18px;
+}
+
+.btn-primary:hover {
+  background-color: black;
+  color: white;
+  border: 2px solid black;
+}
+
+label {
+  font-family: "Special Elite", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: medium;
+  font-size: 18px;
+  color: black;
+  text-align: center;
+  background-color: rgb(233, 221, 206);
+  border-bottom: black 2px solid;
+}
+
+.headline {
+  font-family: "Special Elite", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: medium;
+  font-size: 24px;
+  color: black;
+  text-align: center;
+
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
 
 h3 {
@@ -46,7 +106,7 @@ h3 {
   font-weight: 400;
   font-style: medium;
   font-size: 24px;
-  color: black; 
+  color: black;
   text-align: center;
   background-color: rgb(233, 221, 206);
   padding: 10px;
@@ -56,7 +116,7 @@ h3 {
 
 footer {
   background-color: rgb(233, 221, 206);
-  color: white;
+  color: purple;
   padding: 10px;
   text-align: center;
   border: 2px solid black;
@@ -65,6 +125,7 @@ footer {
   font-family: "Caveat", cursive;
   font-size: 30px;
 }
+
 
 /* style.css code fomr mini project
 body {
