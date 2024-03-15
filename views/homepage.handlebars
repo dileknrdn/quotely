@@ -2,9 +2,15 @@
 
   
     <h1>Welcome to the Quotes Collection</h1>
+    
     <ul>
+        {{log logged_in}}
         {{#each quotes}}
-            <li class="caveat-medium">{{this.quote}} - <strong>{{this.author}}</strong></li>
+        <li class="caveat-medium">{{this.quote}} - <strong>{{this.author}}</strong></li>
+        
+        {{#if ../logged_in}}
+        <button class="add-quote-btn favorite-btn" data-quote-id="{{this.id}}">Like</button>
+        {{/if}}
         {{/each}}
     </ul>
 
