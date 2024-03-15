@@ -9,7 +9,7 @@ router.get('/',async (req, res) => {
     try {
         // Fetch all quotes from the database
         const quoteData = await Quote.findAll({
-            attributes: ['quote', 'author'],
+            attributes: ['id', 'quote', 'author'],
             //the where makes sure to not duplicate quotes from the database that are already assigned to a user
             where: {
               user_id: null
