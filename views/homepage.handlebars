@@ -1,13 +1,15 @@
 <section>
 
-  <div id="likeModal" class="modal">
-  <p>Added to Dashboard!</p>
-    </div>
+  
     <h1>Welcome to the Quotes Collection</h1>
     
     <ul>
         {{log logged_in}}
         {{#each quotes}}
+            {{!-- <li class="caveat-medium">{{this.quote}} - <strong>{{this.author}}</strong></li> --}}
+            {{!-- {{#if logged_in}} --}}
+            {{!-- <button class="add-button" data-quote-id="{{this.id}}">Add to Dashboard</button> --}}
+            {{!-- {{/if}} --}}
         <li class="caveat-medium">{{this.quote}} - <strong>{{this.author}}</strong></li>
         {{log this.id}}
         {{#if ../logged_in}}
@@ -17,4 +19,4 @@
         {{/each}}
     </ul>
 
-</section>  
+</section>

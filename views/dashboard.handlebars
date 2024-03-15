@@ -9,6 +9,7 @@
   <ul>
     <!-- Iterate over each quote and display it -->
     {{#each user.quotes}}
+          {{!-- <button class="remove-button"></button><li class= "caveat-medium">{{this.quote}} - <strong>{{this.author}}</strong></li> --}}
       <li class="caveat-medium">{{this.quote}} - <strong>{{this.author}}</strong></li>
       <button class="delete-quote-btn" data-quote-id="{{this.id}}">Delete</button>
     {{/each}}
