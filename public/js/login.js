@@ -15,7 +15,7 @@ const loginFormHandler = async (event) => {
 
     if (response.ok) {
       // If successful, redirect the browser to the profile page
-      document.location.replace("/");
+      document.location.replace("/dashboard");
       console.log("You are now logged in!");
     } else {
       alert(response.statusText);
@@ -29,8 +29,14 @@ const signupFormHandler = async (event) => {
   const name = document.querySelector("#name-signup").value.trim();
   const email = document.querySelector("#email-signup").value.trim();
   const password = document.querySelector("#password-signup").value.trim();
+  const confirmPassword = document.querySelector("#confirm-password").value.trim();
 
-  if (name && email && password) {
+  if (name && email && password && confirmPassword) {
+    if (password !== confirmPassword) {
+      alert("Passwords do not match please try again.");
+      return;
+    }
+    
     const response = await fetch("/api/users", {
       method: "POST",
       body: JSON.stringify({ name, email, password }),
