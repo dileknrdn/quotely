@@ -1,5 +1,9 @@
 <!-- This is for the individuals board -->
+<div id="removeModal" class="modal">
+  <p>Removed From Dashboard!</p>
+    </div>
 <h1>{{user.name}}'s Dashboard</h1>
+{{/if}}
 
 {{#if user.quotes}}
   <h2>Saved Quotes</h2>
@@ -10,8 +14,10 @@
     {{/each}}
   </ul>
 {{else}}
-  <p>No quotes saved yet.</p>
+  <h2>No Saved Quotes</h2>
 {{/if}}
+
+    
 
 <!-- The above code needs formatting, below is what you had dilek-->
 {{!-- {{#each quotes}}

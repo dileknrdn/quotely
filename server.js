@@ -44,3 +44,23 @@ app.use(routes);
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log("Now listening"));
 });
+
+
+// // Set Handlebars as the view engine
+// app.engine('handlebars', exphbs());
+// app.set('view engine', 'handlebars');
+
+// // Sample user data (you might have a real authentication mechanism)
+// const loggedInUser = {
+//     username: 'exampleUser',
+//     isLoggedIn: true // Set this to true if the user is logged in
+// };
+
+// // Route to render the dashboard
+// app.get('/dashboard', (req, res) => {
+//     res.render('dashboard', { user: loggedInUser });
+// });
+
+// app.listen(3000, () => {
+//     console.log('Server is running on port 3001');
+// });
