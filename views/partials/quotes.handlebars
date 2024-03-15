@@ -1,0 +1,6 @@
+<li class="caveat-medium">{{this.quote}} - <strong>{{this.author}}</strong></li>
+    {{#if logged_in}}
+        <button class="add-quote-btn favorite-btn" data-quote-id="{{this.id}}">Add to Dashboard</button>
+    {{else}}
+        <p>testing</p>
+    {{/if}}

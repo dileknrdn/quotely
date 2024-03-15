@@ -5,11 +5,11 @@ const getQuoteOfTheDay = require('../services/quoteOfTheDay');
 
 
 
-router.get('/', async (req, res) => {
+router.get('/',async (req, res) => {
     try {
         // Fetch all quotes from the database
         const quoteData = await Quote.findAll({
-            attributes: ['quote', 'author'],
+            attributes: ['id', 'quote', 'author'],
             //the where makes sure to not duplicate quotes from the database that are already assigned to a user
             where: {
               user_id: null
@@ -19,12 +19,15 @@ router.get('/', async (req, res) => {
         // Serialize data so the template can read it
         const quotes = quoteData.map((quote) => quote.get({ plain: true }));
         const quoteOfTheDay = await getQuoteOfTheDay();
+        const logged_in = req.session.logged_in;
+        console.log(req.session.logged_in)
+        console.log("logged_in: ", logged_in)
           
         // Renders the homepage with the quotes data
         res.render('homepage',{
             quotes,
             quoteOfTheDay,
-            logged_in: req.session.logged_in,
+            logged_in, 
         
         }); 
         } catch (error) {
@@ -33,9 +36,11 @@ router.get('/', async (req, res) => {
     } 
 });
 
+
 router.get('/login', (req, res) => {
+    console.log("logged_in: ", req.session.logged_in);
     if (req.session.logged_in) {
-      res.redirect('/');
+      res.redirect('/dashboard');
       return;
     }
   
@@ -55,13 +60,14 @@ router.get('/login', (req, res) => {
   
       const user = userData.get({ plain: true });
       console.log("user: ", user)
+      console.log("logged_in: ", req.session.logged_in)
       console.log("session id: ", req.session.user_id)
       console.log("user.quotes", user.quotes)
       
   
       res.render("dashboard", {
         user: user,
-        logged_in: true,
+        logged_in: req.session.logged_in,
       });
     } catch (err) {
       console.log(err.message);

@@ -2,30 +2,38 @@ const router = require('express').Router();
 const { Quote } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.get('/', withAuth, async (req, res) => {
+router.get('/:id', withAuth, async (req, res) => {
   try {
-    const quoteData = await Quote.findAll();
-    res.status(200).json(quoteData);
-  } catch (err) {
-    res.status(500).json(err);
-  }
+    const quote = await Quote.findByPk(req.params.id);
+    if (quote) {
+        res.json(quote);
+    } else {
+        res.status(404).json({ message: 'Quote not found' });
+    }
+} catch (err) {
+    console.error('Error fetching quote:', err);
+    res.status(500).json({ message: 'Server error' });
+}
 });
 
 //I want to create a route to add a liked quote to the database
 router.post('/', withAuth, async (req, res) => {
   try {
+    const userId = req.session.user_id;
+    console.log(req.body)
     const newQuote = await Quote.create({
-      ...req.body,
-      user_id: req.session.user_id,
+        ...req.body.quoteData, 
+        user_id: userId 
     });
 
-    res.status(200).json(newQuote);
-  } catch (err) {
-    res.status(400).json(err);
-  }
+    res.json(newQuote);
+} catch (err) {
+    console.error('Error posting quote:', err);
+    res.status(500).json({ message: 'Server error' });
+}
 });
 
-//I want to create a route to delete a liked quote from the database
+// //I want to create a route to delete a liked quote from the database
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const quoteData = await Quote.destroy({
@@ -40,47 +48,11 @@ router.delete('/:id', withAuth, async (req, res) => {
       return;
     }
 
-    res.status(200).json(quoteData);
+    return res.status(200).json({ message: 'Quote deleted successfully' });
   } catch (err) {
-    res.status(500).json(err);
+    return res.status(500).json(err);
   }
 });
 
-//I want to create a route to update a liked quote in the database
-router.put('/:id', withAuth, async (req, res) => {
-  try {
-    const quoteData = await Quote.update(req.body, {
-      where: {
-        id: req.params.id,
-        user_id: req.session.user_id,
-      },
-    });
-
-    if (!quoteData) {
-      res.status(404).json({ message: 'No quote found with this id!' });
-      return;
-    }
-
-    res.status(200).json(quoteData);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-//I want to create a route to get a liked quote from the database
-router.get('/:id', withAuth, async (req, res) => {
-  try {
-    const quoteData = await Quote.findByPk(req.params.id);
-
-    if (!quoteData) {
-      res.status(404).json({ message: 'No quote found with this id!' });
-      return;
-    }
-
-    res.status(200).json(quoteData);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
 
 module.exports = router;

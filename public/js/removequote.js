@@ -1,3 +1,4 @@
+<<<<<<< HEAD
  
  
 // Function to remove a quote from the dashboard
@@ -25,9 +26,19 @@ function removeFromFavorites(item) {
 }
 
 
+=======
+ // I want to add a remove button to each liked quote
+    let removeButton = document.createElement("button");
+    removeButton.classList.add("remove-btn");
+    removeButton.onclick = () => {
+        removeFromFavorites(item);
+        removeModal();
+    };
+>>>>>>> f1b610b9a59e7bb1d48ea48fa7cf98b86d7a6e2c
 
 
- 
+
+
  // Function to show modal when remove button is clicked
  function removeModal() {
     var modal = document.getElementById("removeModal");
@@ -37,6 +48,7 @@ function removeFromFavorites(item) {
     }, 1000); // Hide modal after 1 second
 }
 
+<<<<<<< HEAD
  // I want to add a remove button to each liked quote
  let removeButton = document.createElement("button");
  favoriteButton.innerHTML = '<button class="remove-button"></button>';
@@ -45,3 +57,27 @@ function removeFromFavorites(item) {
      removeFromFavorites(item);
      removeModal();
  };
+=======
+document.addEventListener("DOMContentLoaded", function() {
+    const buttons = document.querySelectorAll('.delete-quote-btn');
+    buttons.forEach(button => {
+        button.addEventListener('click', function() {
+            const quoteId = this.getAttribute('data-quote-id');
+            
+            fetch(`/api/quotes/${quoteId}`, {
+                method: 'DELETE',
+                credentials: 'include'
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to delete quote');
+                }
+                window.location.href = '/dashboard';
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    });
+});
+>>>>>>> f1b610b9a59e7bb1d48ea48fa7cf98b86d7a6e2c

@@ -9,12 +9,21 @@
   <ul>
     <!-- Iterate over each quote and display it -->
     {{#each user.quotes}}
+<<<<<<< HEAD
           <button class="remove-button"></button><li class= "caveat-medium">{{this.quote}} - <strong>{{this.author}}</strong></li>
+=======
+      <li class="caveat-medium">{{this.quote}} - <strong>{{this.author}}</strong></li>
+      <button class="delete-quote-btn" data-quote-id="{{this.id}}">Delete</button>
+>>>>>>> f1b610b9a59e7bb1d48ea48fa7cf98b86d7a6e2c
     {{/each}}
   </ul>
 {{else}}
-  <p>No quotes saved yet.</p>
+  <h2>No Saved Quotes</h2>
 {{/if}}
+
+<script src="./js/removequote.js"></script>
+
+    
 
 <!-- The above code needs formatting, below is what you had dilek-->
 {{!-- {{#each quotes}}
