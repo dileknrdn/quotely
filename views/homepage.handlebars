@@ -4,7 +4,13 @@
     <h1>Welcome to the Quotes Collection</h1>
     <ul>
         {{#each quotes}}
-            <li class="caveat-medium">{{this.quote}} - <strong>{{this.author}}</strong></li>
+            <li class="caveat-medium">{{this.quote}} - <strong>{{this.author}}</strong>
+            {{#if logged_in}}
+    <button id="savequote" class="btn-no-style">Save Quote</button>
+    {{else}}
+    <!-- Otherwise, show a link to login -->
+    <a href="/login">Save Quote</a>
+    {{/if}} </li>
         {{/each}}
     </ul>
 

@@ -10,8 +10,14 @@
     {{/each}}
   </ul>
 {{else}}
-  <p>No quotes saved yet.</p>
+  <p class="caveat-medium">No quotes saved yet!</p>
 {{/if}}
+
+{{#if user.isLoggedIn}}
+  <a href="/quotes">Add a Quote</a>
+{{/if}}
+
+    
 
 <!-- The above code needs formatting, below is what you had dilek-->
 {{!-- {{#each quotes}}
