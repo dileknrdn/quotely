@@ -20,9 +20,9 @@ router.post('/', withAuth, async (req, res) => {
     });
 
     res.status(200).json(newQuote);
-    //change view to dashboard
+    // change view to dashboard
     res.render('dashboard',{ 
-    }); 
+  }); 
   } catch (err) {
     res.status(400).json(err);
   }
