@@ -1,13 +1,14 @@
 <section>
 
-  <div id="likeModal" class="modal">
-  <p>Added to Dashboard!</p>
-    </div>
+  
     <h1>Welcome to the Quotes Collection</h1>
     <ul>
         {{#each quotes}}
             <li class="caveat-medium">{{this.quote}} - <strong>{{this.author}}</strong></li>
+            {{#if logged_in}}
+            <button class="add-button" data-quote-id="{{this.id}}">Add to Dashboard</button>
+            {{/if}}
         {{/each}}
     </ul>
 
-</section>  
+</section>

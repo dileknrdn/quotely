@@ -1,3 +1,28 @@
+ // Function to add a quote to the dashboard
+    function addToFavorites(item) {
+        // Send a POST request to the API endpoint
+        fetch(`/api/quotes`, {
+            method: "POST",
+            body: JSON.stringify(item),
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })
+            .then((response) => {
+                if (response.ok) {
+                    return response.json();
+                }
+                throw new Error("Failed to add quote");
+            })
+            .then((data) => {
+                console.log(data);
+                location.reload();
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    }
+    
  // Function to show modal when like button is clicked
  function likeModal() {
     var modal = document.getElementById("likeModal");
@@ -8,7 +33,7 @@
 }
 // Creates the like button dynamically
 let likeButton = document.createElement("button");
-//favoriteButton.innerHTML = '<i class="fas fa-heart favorite-btn"></i>';
+likeButton.innerHTML = '<button class="add-button"></button>';
 likeButtonButton.classList.add("favorite-btn");
 likeButton.onclick = () => {
     addToFavorites(item);
