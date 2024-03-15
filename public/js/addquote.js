@@ -32,15 +32,13 @@
     }, 1000); // Hide modal after 1 second
 }
 // Creates the like button dynamically
-<<<<<<< HEAD
 let likeButton = document.createElement("button");
 likeButton.innerHTML = '<button class="add-button"></button>';
-likeButtonButton.classList.add("favorite-btn");
+likeButton.classList.add("favorite-btn");
 likeButton.onclick = () => {
     addToFavorites(item);
     likeModal();
 };
-=======
 // let likeButton = document.createElement("button");
 // //favoriteButton.innerHTML = '<i class="fas fa-heart favorite-btn"></i>';
 // likeButtonButton.classList.add("favorite-btn");
@@ -95,4 +93,3 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
->>>>>>> f1b610b9a59e7bb1d48ea48fa7cf98b86d7a6e2c

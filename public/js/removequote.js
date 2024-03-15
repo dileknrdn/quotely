@@ -1,5 +1,4 @@
-<<<<<<< HEAD
- 
+console.log("removequote.js is connected"); 
  
 // Function to remove a quote from the dashboard
 function removeFromFavorites(item) {
@@ -26,15 +25,6 @@ function removeFromFavorites(item) {
 }
 
 
-=======
- // I want to add a remove button to each liked quote
-    let removeButton = document.createElement("button");
-    removeButton.classList.add("remove-btn");
-    removeButton.onclick = () => {
-        removeFromFavorites(item);
-        removeModal();
-    };
->>>>>>> f1b610b9a59e7bb1d48ea48fa7cf98b86d7a6e2c
 
 
 
@@ -48,16 +38,14 @@ function removeFromFavorites(item) {
     }, 1000); // Hide modal after 1 second
 }
 
-<<<<<<< HEAD
  // I want to add a remove button to each liked quote
  let removeButton = document.createElement("button");
- favoriteButton.innerHTML = '<button class="remove-button"></button>';
+ removeButton.innerHTML = '<button class="remove-button"></button>';
  removeButton.classList.add("remove-btn");
  removeButton.onclick = () => {
      removeFromFavorites(item);
      removeModal();
  };
-=======
 document.addEventListener("DOMContentLoaded", function() {
     const buttons = document.querySelectorAll('.delete-quote-btn');
     buttons.forEach(button => {
@@ -80,4 +68,3 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
->>>>>>> f1b610b9a59e7bb1d48ea48fa7cf98b86d7a6e2c

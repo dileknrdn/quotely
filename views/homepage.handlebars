@@ -6,19 +6,16 @@
     <ul>
         {{log logged_in}}
         {{#each quotes}}
-<<<<<<< HEAD
-            <li class="caveat-medium">{{this.quote}} - <strong>{{this.author}}</strong></li>
-            {{#if logged_in}}
-            <button class="add-button" data-quote-id="{{this.id}}">Add to Dashboard</button>
-            {{/if}}
-=======
+            {{!-- <li class="caveat-medium">{{this.quote}} - <strong>{{this.author}}</strong></li> --}}
+            {{!-- {{#if logged_in}} --}}
+            {{!-- <button class="add-button" data-quote-id="{{this.id}}">Add to Dashboard</button> --}}
+            {{!-- {{/if}} --}}
         <li class="caveat-medium">{{this.quote}} - <strong>{{this.author}}</strong></li>
         {{log this.id}}
         {{#if ../logged_in}}
         <button class="add-quote-btn favorite-btn" data-quote-id="{{this.id}}">Like</button>
         {{log this.id}}
         {{/if}}
->>>>>>> f1b610b9a59e7bb1d48ea48fa7cf98b86d7a6e2c
         {{/each}}
     </ul>
 
