@@ -3,7 +3,6 @@
   <p>Removed From Dashboard!</p>
     </div>
 <h1>{{user.name}}'s Dashboard</h1>
-{{/if}}
 
 {{#if user.quotes}}
   <h2>Saved Quotes</h2>
@@ -11,11 +10,14 @@
     <!-- Iterate over each quote and display it -->
     {{#each user.quotes}}
       <li class="caveat-medium">{{this.quote}} - <strong>{{this.author}}</strong></li>
+      <button class="delete-quote-btn" data-quote-id="{{this.id}}">Delete</button>
     {{/each}}
   </ul>
 {{else}}
   <h2>No Saved Quotes</h2>
 {{/if}}
+
+<script src="./js/removequote.js"></script>
 
     
 

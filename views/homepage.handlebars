@@ -9,9 +9,10 @@
         {{log logged_in}}
         {{#each quotes}}
         <li class="caveat-medium">{{this.quote}} - <strong>{{this.author}}</strong></li>
-        
+        {{log this.id}}
         {{#if ../logged_in}}
         <button class="add-quote-btn favorite-btn" data-quote-id="{{this.id}}">Like</button>
+        {{log this.id}}
         {{/if}}
         {{/each}}
     </ul>

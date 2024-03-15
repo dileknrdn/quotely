@@ -18,3 +18,25 @@
     }, 1000); // Hide modal after 1 second
 }
 
+document.addEventListener("DOMContentLoaded", function() {
+    const buttons = document.querySelectorAll('.delete-quote-btn');
+    buttons.forEach(button => {
+        button.addEventListener('click', function() {
+            const quoteId = this.getAttribute('data-quote-id');
+            
+            fetch(`/api/quotes/${quoteId}`, {
+                method: 'DELETE',
+                credentials: 'include'
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to delete quote');
+                }
+                window.location.href = '/dashboard';
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    });
+});
