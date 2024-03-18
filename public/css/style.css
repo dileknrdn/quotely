@@ -55,6 +55,17 @@ h2 {
   border-radius: 10px;
 }
 
+nav ul {
+  list-style-type: none; /* Remove bullets */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+}
+
+nav ul li {
+  /* display: inline; Display list items horizontally */
+  margin-right: 10px; /* Add some space between list items */
+}
+
 .btn-primary {
   background-color: rgb(233, 221, 206);
   color: black;
@@ -70,6 +81,32 @@ h2 {
   background-color: black;
   color: white;
   border: 2px solid black;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px; 
+}
+
+.form-group label {
+  margin-bottom: 5px; 
+}
+
+.quote-item {
+  display: flex; 
+  align-items: center; 
+  margin-bottom: 10px; 
+}
+
+.quote-text {
+  flex: 1; 
+  margin-right: 10px;
+}
+
+.add-quote-btn {
+  margin-left: auto; 
 }
 
 label {
