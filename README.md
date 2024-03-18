@@ -1,6 +1,6 @@
 # Quotely 
 
-Get inspred by Quotes!
+Get inspred and motivated by Quotes!
 
 ## Description
 
